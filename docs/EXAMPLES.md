@@ -25,6 +25,14 @@ Count documents in logs-* where service.name is api
 Open a point in time for logs-* for 1 minute
 ```
 
+## Log investigations
+
+```text
+Search logs-* for error events in the last hour
+Show the top services in logs-* for timeout errors today
+Build a 5 minute timeline of warning and error logs for checkout-service in the last 24 hours
+```
+
 ## Indices and templates
 
 ```text

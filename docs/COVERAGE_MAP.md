@@ -38,6 +38,12 @@ This file is a practical guide to the dedicated tool surface.
 - `elasticsearch_update_by_query_rethrottle`
 - `elasticsearch_delete_by_query_rethrottle`
 
+## Log investigations
+
+- `elasticsearch_search_logs`
+- `elasticsearch_logs_top_values`
+- `elasticsearch_logs_timeline`
+
 ## Index administration
 
 - create, delete, exists, get

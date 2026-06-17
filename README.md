@@ -5,7 +5,7 @@
 
 Production-focused Elasticsearch automation for the Pi coding agent.
 
-`@false00/pi-elasticsearch` exposes **139 Pi tools** for search, document CRUD, bulk operations, indices, cluster administration, security, ingest, snapshots, lifecycle, tasks, SQL/ESQL, transforms, inference, connectors, ML, watcher, and universal API reach through both the official Elasticsearch JS client and raw REST access.
+`@false00/pi-elasticsearch` exposes **142 Pi tools** for search, log investigations, document CRUD, bulk operations, indices, cluster administration, security, ingest, snapshots, lifecycle, tasks, SQL/ESQL, transforms, inference, connectors, ML, watcher, and universal API reach through both the official Elasticsearch JS client and raw REST access.
 
 | Resource | Link |
 |---|---|
@@ -27,7 +27,7 @@ This package is aimed at people who want Pi to operate real Elasticsearch cluste
 
 What it emphasizes:
 
-- **Broad day-to-day coverage** — 139 tools covering common Elasticsearch workflows
+- **Broad day-to-day coverage** — 142 tools covering common Elasticsearch workflows
 - **Hybrid coverage strategy** — dedicated tools for common work plus two universal escape hatches for the long tail
 - **Pi-friendly first-run behavior** — the extension still loads on fresh installs and auto-creates `~/.config/pi-elasticsearch/.env`
 - **Structured error handling** — tool failures are thrown back to Pi as real tool errors with categories and guidance
@@ -41,6 +41,7 @@ What it emphasizes:
 | Core | 3 |
 | Documents | 7 |
 | Search + bulk + query-by-task | 17 |
+| Log investigations | 3 |
 | Indices + aliases + templates | 20 |
 | Data streams | 5 |
 | CAT | 6 |
@@ -60,7 +61,7 @@ What it emphasizes:
 | Watcher | 4 |
 | Universal REST coverage | 1 |
 | Universal official-client coverage + helper | 2 |
-| **Total** | **139** |
+| **Total** | **142** |
 
 ### Official API coverage audit
 
@@ -136,13 +137,15 @@ Then ask Pi to operate Elasticsearch in plain English:
 
 ```text
 Show cluster health
-Search logs-* for documents where level is error
+Search logs-* for error events in the last hour
+Show the top services in logs-* for timeout errors today
+Build a 5 minute timeline of error logs for checkout-service in the last 24 hours
 Create an index template for app-* with one shard
 Count documents in users where active is true
 List running tasks
 ```
 
-Pi will call tools like `elasticsearch_health`, `elasticsearch_search`, `elasticsearch_put_index_template`, `elasticsearch_count`, and `elasticsearch_list_tasks` behind the scenes.
+Pi will call tools like `elasticsearch_health`, `elasticsearch_search_logs`, `elasticsearch_logs_top_values`, `elasticsearch_logs_timeline`, `elasticsearch_put_index_template`, `elasticsearch_count`, and `elasticsearch_list_tasks` behind the scenes.
 
 ## Top tasks and example prompts
 
@@ -153,6 +156,9 @@ Get cluster info
 Create an index named products
 Index a document into products with id 1
 Search products for documents matching laptop
+Investigate logs-* for 500 errors in the last 30 minutes
+Show the top hosts for error logs in auth-service today
+Build a 15 minute timeline for payment-service error logs over the last 24 hours
 Update index settings for logs-* to set refresh_interval to 30s
 Create a snapshot repository
 Run an ingest pipeline simulation
@@ -304,6 +310,7 @@ The package groups tools into these files under `dist/tools/`:
 - `core.js`
 - `documents.js`
 - `search.js`
+- `logs.js`
 - `indices.js`
 - `data-streams.js`
 - `cat.js`

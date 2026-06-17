@@ -74,6 +74,7 @@
     "test:core": "node tests/core.test.mjs",
     "test:documents": "node tests/documents.test.mjs",
     "test:search": "node tests/search.test.mjs",
+    "test:logs": "node tests/logs.test.mjs",
     "test:indices": "node tests/indices.test.mjs",
     "test:cluster": "node tests/cluster.test.mjs",
     "test:nodes": "node tests/nodes.test.mjs",

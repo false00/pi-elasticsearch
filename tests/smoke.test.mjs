@@ -12,6 +12,7 @@ export async function run() {
       for (const required of [
         "elasticsearch_info",
         "elasticsearch_search",
+        "elasticsearch_search_logs",
         "elasticsearch_create_index",
         "elasticsearch_security_authenticate",
         "elasticsearch_client_call",

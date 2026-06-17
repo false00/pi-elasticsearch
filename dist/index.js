@@ -2,6 +2,7 @@ import { ElasticsearchClient } from "./elasticsearch-client.js";
 import { coreTools } from "./tools/core.js";
 import { documentTools } from "./tools/documents.js";
 import { searchTools } from "./tools/search.js";
+import { logTools } from "./tools/logs.js";
 import { indexTools } from "./tools/indices.js";
 import { dataStreamTools } from "./tools/data-streams.js";
 import { catTools } from "./tools/cat.js";
@@ -28,6 +29,7 @@ export default function elasticsearchExtension(pi) {
     coreTools(client),
     documentTools(client),
     searchTools(client),
+    logTools(client),
     indexTools(client),
     dataStreamTools(client),
     catTools(client),

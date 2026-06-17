@@ -5,6 +5,8 @@ export function buildTool(client, spec) {
     name: spec.name,
     label: spec.label,
     description: spec.description,
+    promptSnippet: spec.promptSnippet,
+    promptGuidelines: spec.promptGuidelines,
     parameters: spec.parameters,
     execute: safeExecute(async (params, signal, onUpdate) => {
       throwIfAborted(signal);

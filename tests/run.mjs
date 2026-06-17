@@ -6,6 +6,7 @@ import { run as auth } from "./auth.test.mjs";
 import { run as core } from "./core.test.mjs";
 import { run as documents } from "./documents.test.mjs";
 import { run as search } from "./search.test.mjs";
+import { run as logs } from "./logs.test.mjs";
 import { run as indices } from "./indices.test.mjs";
 import { run as cluster } from "./cluster.test.mjs";
 import { run as nodes } from "./nodes.test.mjs";
@@ -20,7 +21,7 @@ import { run as clientCall } from "./client-call.test.mjs";
 
 const suites = [smoke, runtime, pkg];
 if (liveTestsEnabled()) {
-  suites.push(auth, core, documents, search, indices, cluster, nodes, ingest, security, snapshot, tasks, sqlEsql, transforms, rawApi, clientCall);
+  suites.push(auth, core, documents, search, logs, indices, cluster, nodes, ingest, security, snapshot, tasks, sqlEsql, transforms, rawApi, clientCall);
 }
 
 let failed = 0;
