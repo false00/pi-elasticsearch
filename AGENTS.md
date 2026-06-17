@@ -145,6 +145,12 @@ Treat this package as infrastructure/search automation software, not a toy integ
 - Do not skip npm versions.
 - Dry-run with `npm pack --dry-run` before publish.
 - Publish with `npm publish --ignore-scripts`.
+- If npm requires browser auth / 2FA / OTP, stop and ask the user to complete the publish manually instead of trying to work around the prompt.
+- When handing off manual publish, give the user a single copy-paste one-liner.
+- Preferred one-liner after the user has reviewed the release state:
+  ```bash
+  v=$(node -p "require('./package.json').version"); git rev-parse "v$v" >/dev/null 2>&1 || git tag "v$v"; npm publish --ignore-scripts && git push origin master --tags
+  ```
 - Push tags only after a successful publish when the user has asked for release work.
 
 ## Release checklist
@@ -160,4 +166,5 @@ When asked to prepare a release:
 7. Verify README and AGENTS reflect shipped behavior
 8. Check whether the current version is already published before bumping
 9. Verify GitHub workflows still reflect the intended trust and security posture
-10. Only commit, tag, push, or publish with explicit user approval
+10. If npm browser auth / 2FA blocks automation, stop and hand the user the publish one-liner instead of retrying interactively
+11. Only commit, tag, push, or publish with explicit user approval
