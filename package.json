@@ -1,0 +1,103 @@
+{
+  "name": "@false00/pi-elasticsearch",
+  "version": "0.1.0",
+  "description": "Production-focused Elasticsearch automation tools for the Pi coding agent — curated tools for search, documents, indices, cluster administration, security, lifecycle, and full API reach via the official JS client and raw REST access",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "SECURITY.md",
+    "docs/API_COVERAGE_AUDIT.md",
+    "docs/AUTHENTICATION.md",
+    "docs/COMPATIBILITY.md",
+    "docs/COVERAGE_MAP.md",
+    "docs/EXAMPLES.md",
+    "docs/TROUBLESHOOTING.md",
+    "scripts/audit-official-api.mjs",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi-coding-agent",
+    "elasticsearch",
+    "elastic",
+    "search",
+    "observability",
+    "vector-search",
+    "admin",
+    "automation",
+    "false00"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "author": "false00 <jortega@curl.red>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/false00/pi-elasticsearch.git"
+  },
+  "homepage": "https://github.com/false00/pi-elasticsearch#readme",
+  "bugs": {
+    "url": "https://github.com/false00/pi-elasticsearch/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "pi": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "test:smoke": "node tests/smoke.test.mjs",
+    "test:runtime": "node tests/runtime.test.mjs",
+    "test:package": "node tests/package.test.mjs",
+    "test:auth": "node tests/auth.test.mjs",
+    "test:core": "node tests/core.test.mjs",
+    "test:documents": "node tests/documents.test.mjs",
+    "test:search": "node tests/search.test.mjs",
+    "test:indices": "node tests/indices.test.mjs",
+    "test:cluster": "node tests/cluster.test.mjs",
+    "test:nodes": "node tests/nodes.test.mjs",
+    "test:ingest": "node tests/ingest.test.mjs",
+    "test:security": "node tests/security.test.mjs",
+    "test:snapshot": "node tests/snapshot.test.mjs",
+    "test:tasks": "node tests/tasks.test.mjs",
+    "test:sql-esql": "node tests/sql-esql.test.mjs",
+    "test:transforms": "node tests/transforms.test.mjs",
+    "test:raw-api": "node tests/raw-api.test.mjs",
+    "test:client-call": "node tests/client-call.test.mjs",
+    "test:ci": "npm run test:smoke && npm run test:package && npm run audit:official-api",
+    "audit:official-api": "node scripts/audit-official-api.mjs",
+    "lint": "echo 'no linter configured'",
+    "prepublishOnly": "npm test && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^9.4.2"
+  },
+  "devDependencies": {
+    "typebox": "^1.2.16"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  }
+}
