@@ -147,9 +147,13 @@ Treat this package as infrastructure/search automation software, not a toy integ
 - Publish with `npm publish --ignore-scripts`.
 - If npm requires browser auth / 2FA / OTP, stop and ask the user to complete the publish manually instead of trying to work around the prompt.
 - When handing off manual publish, give the user a single copy-paste one-liner.
-- Preferred one-liner after the user has reviewed the release state:
+- On Windows / PowerShell, prefer this one-liner after the user has reviewed the release state:
+  ```powershell
+  git add -A; git diff --cached --quiet; if ($LASTEXITCODE -ne 0) { git commit -m "release: v$(node -p "require('./package.json').version")" }; $v = node -p "require('./package.json').version"; git rev-parse "v$v" *> $null; if ($LASTEXITCODE -ne 0) { git tag "v$v" }; npm publish --ignore-scripts; if ($LASTEXITCODE -eq 0) { git push origin master --tags }
+  ```
+- On bash-like shells, use:
   ```bash
-  v=$(node -p "require('./package.json').version"); git rev-parse "v$v" >/dev/null 2>&1 || git tag "v$v"; npm publish --ignore-scripts && git push origin master --tags
+  git add -A && (git diff --cached --quiet || git commit -m "release: v$(node -p "require('./package.json').version")"); v=$(node -p "require('./package.json').version"); git rev-parse "v$v" >/dev/null 2>&1 || git tag "v$v"; npm publish --ignore-scripts && git push origin master --tags
   ```
 - Push tags only after a successful publish when the user has asked for release work.
 
