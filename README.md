@@ -1,7 +1,7 @@
 # @false00/pi-elasticsearch
 
-[![npm version](https://img.shields.io/npm/v/@false00/pi-elasticsearch.svg)](https://www.npmjs.com/package/@false00/pi-elasticsearch)
-[![license](https://img.shields.io/npm/l/@false00/pi-elasticsearch.svg)](LICENSE)
+[![CI](https://github.com/false00/pi-elasticsearch/actions/workflows/ci.yml/badge.svg)](https://github.com/false00/pi-elasticsearch/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/false00/pi-elasticsearch.svg)](LICENSE)
 
 Production-focused Elasticsearch automation for the Pi coding agent.
 

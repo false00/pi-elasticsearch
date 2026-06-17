@@ -55,6 +55,8 @@ export async function run() {
   await s.test("repository automation and issue templates exist", async () => {
     for (const path of [
       ".github/workflows/ci.yml",
+      ".github/workflows/codeql.yml",
+      ".github/workflows/dependency-review.yml",
       ".github/CODEOWNERS",
       ".github/dependabot.yml",
       ".github/pull_request_template.md",

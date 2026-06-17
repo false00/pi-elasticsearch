@@ -19,7 +19,7 @@ The package exists to give the Pi coding agent broad Elasticsearch coverage with
 - `docs/` — bundled operator documentation and coverage notes
 - `tests/` — smoke, runtime, package, and optional live integration tests
 - `scripts/audit-official-api.mjs` — official API audit helper against the Elasticsearch specification repo
-- `.github/` — CI workflow, templates, and repository automation
+- `.github/` — CI workflows, security scanning, templates, and repository automation
 
 ## Project facts
 
@@ -159,4 +159,5 @@ When asked to prepare a release:
 6. Verify `package.json` metadata is current
 7. Verify README and AGENTS reflect shipped behavior
 8. Check whether the current version is already published before bumping
-9. Only commit, tag, push, or publish with explicit user approval
+9. Verify GitHub workflows still reflect the intended trust and security posture
+10. Only commit, tag, push, or publish with explicit user approval
