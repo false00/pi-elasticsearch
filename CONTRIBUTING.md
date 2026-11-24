@@ -29,7 +29,7 @@ SECURITY.md  Vulnerability reporting and security policy
 
 Requirements:
 
-- Node.js 22+
+- Node.js 22.19+
 - A reachable Elasticsearch cluster if you want to run live integration tests
 - A configured `~/.config/pi-elasticsearch/.env` or `PI_ELASTICSEARCH_CONFIG_DIR` override
 

@@ -29,7 +29,8 @@ The package exists to give the Pi coding agent broad Elasticsearch coverage with
 - The package is intended for **Pi package installation via npm**.
 - The entrypoint must remain registered in `package.json` under `pi.extensions`.
 - Broad official coverage is achieved by a combination of dedicated `elasticsearch_*` tools, `elasticsearch_client_call`, and `elasticsearch_api_call`.
-- The currently supported Node.js floor is **22+**.
+- The currently supported Node.js floor is **22.19+**, matching the patched Pi host dependency.
+- The supported Pi coding agent range is **>=1.5.0 <2.0.0**; older hosts include vulnerable dependency versions.
 
 ## Pi package conventions
 

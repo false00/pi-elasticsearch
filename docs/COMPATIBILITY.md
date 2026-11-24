@@ -4,9 +4,10 @@
 
 This repository is designed around:
 
-- Node.js `>=22`
+- Node.js `>=22.19.0`
 - `@elastic/elasticsearch` `9.x`
 - Pi package loading through `pi.extensions`
+- Pi coding agent `>=1.5.0 <2.0.0`, including its undici security fixes
 
 ## Elasticsearch compatibility
 

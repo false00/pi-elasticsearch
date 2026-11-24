@@ -5,6 +5,8 @@
 
 Production-focused Elasticsearch automation for the Pi coding agent.
 
+Requires Pi coding agent 1.5.0 or a newer 1.x release.
+
 `@false00/pi-elasticsearch` exposes **142 Pi tools** for search, log investigations, document CRUD, bulk operations, indices, cluster administration, security, ingest, snapshots, lifecycle, tasks, SQL/ESQL, transforms, inference, connectors, ML, watcher, and universal API reach through both the official Elasticsearch JS client and raw REST access.
 
 | Resource | Link |
@@ -212,7 +214,7 @@ If you are evaluating the package for production use, review:
 
 ### Requirements
 
-- Node.js 22+
+- Node.js 22.19+
 - A Pi runtime with extension support
 - A reachable Elasticsearch endpoint or Elastic Cloud deployment
 
@@ -358,7 +360,7 @@ CHANGELOG.md              Release history
 
 This repository is designed around:
 
-- Node.js `>=22`
+- Node.js `>=22.19.0`
 - `@elastic/elasticsearch` `9.x`
 - Pi package loading through `pi.extensions`
 

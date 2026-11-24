@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.1.3 - 2026-11-23
+
+- Require Pi 1.5.0 or a newer 1.x release and refresh the host-agent lockfile to remove vulnerable undici copies.
+- Raise the Node.js floor to 22.19 to match the patched Pi host.
+
 ## 0.1.2 - 2026-10-21
 
 - Updated `@elastic/elasticsearch` to 9.5.1 and `typebox` to 1.4.2
